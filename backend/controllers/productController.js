@@ -77,6 +77,44 @@ const removeProduct = async (req, res) => {
   }
 };
 
+// Function to update a product
+const updateProduct = async (req, res) => {
+  try {
+    const { _id, name, category, price } = req.body;
+
+    if (!_id) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Product ID is required" });
+    }
+
+    const updatedProduct = await productModel.findByIdAndUpdate(
+      _id,
+      {
+        ...(name && { name }),
+        ...(category && { category }),
+        ...(price && { price: Number(price) }),
+      },
+      { new: true }
+    );
+
+    if (!updatedProduct) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Product not found" });
+    }
+
+    res.json({
+      success: true,
+      message: "Product updated successfully",
+      product: updatedProduct,
+    });
+  } catch (error) {
+    console.error("Error updating product:", error);
+    res.status(500).json({ success: false, message: "Something went wrong" });
+  }
+};
+
 // Function to get a single product
 const singleProduct = async (req, res) => {
   try {
@@ -93,5 +131,6 @@ module.exports = {
   addProduct,
   listProduct,
   removeProduct,
+  updateProduct,
   singleProduct,
 };

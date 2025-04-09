@@ -4,6 +4,7 @@ const {
   singleProduct,
   listProduct,
   removeProduct,
+  updateProduct,
 } = require("../controllers/productController");
 const Upload = require("../middlewares/multer");
 const adminAuth = require("../middlewares/adminAuth");
@@ -24,5 +25,6 @@ productRouter.post(
 productRouter.post("/single", singleProduct);
 productRouter.get("/list", listProduct);
 productRouter.post("/remove", adminAuth, removeProduct);
+productRouter.post("/update", adminAuth, updateProduct);
 
 module.exports = productRouter;
