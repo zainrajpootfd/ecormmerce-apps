@@ -86,6 +86,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { backendUrl } from "../App";
 import { toast } from "react-toastify";
+import { Edit, Edit3 } from "lucide-react";
 
 const List = ({ token }) => {
   const [list, setList] = useState([]);
@@ -224,12 +225,12 @@ const List = ({ token }) => {
               >
                 X
               </p>
-              <p
+              <button
                 onClick={() => setEditData(item)}
                 className="cursor-pointer text-green-600 font-semibold"
               >
-                Edit
-              </p>
+                <Edit3 size={20} />
+              </button>
             </div>
           ))}
         </div>
