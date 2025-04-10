@@ -391,13 +391,16 @@ const Add = ({ token }) => {
           </div>
 
           <div>
-            <p className="mb-2">Subcategory</p>
-            <input
-              type="text"
+            <p className="mb-2">Product Subcategory</p>
+            <select
               onChange={(e) => setSubCategory(e.target.value)}
+              className="w-full px-2 py-1 cursor-pointer"
               value={subCategory}
-              className="px-2 py-1 w-full sm:w-[120px] border"
-            />
+            >
+              <option value="Topwear">Topwear</option>
+              <option value="Bottomwear">Bottomwear</option>
+              <option value="Winterwear">Winterwear</option>
+            </select>
           </div>
 
           <div>
