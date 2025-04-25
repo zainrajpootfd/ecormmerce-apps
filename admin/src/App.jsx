@@ -10,6 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ShopManager from "./pages/ShopManager";
 import InventoryPage from "./pages/InventoryPage";
+import TransfersPage from "./pages/TransferPage";
 export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const App = () => {
@@ -49,6 +50,7 @@ const App = () => {
                   path="/inventory"
                   element={<InventoryPage token={token} />}
                 />
+                <Route path="stockTransfer" element={<TransfersPage />} />
               </Routes>
             </div>
           </div>
