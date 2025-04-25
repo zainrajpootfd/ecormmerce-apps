@@ -1,7 +1,6 @@
 // ShopManager.jsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import toast, { Toaster } from "react-hot-toast";
 import { toast, ToastContainer } from "react-toastify";
 import { backendUrl } from "../App";
 
@@ -43,7 +42,7 @@ export default function ShopManager() {
         await axios.put(`${backendUrl}/api/shops/${editingId}`, form);
         toast.success("Shop updated successfully");
       } else {
-        await axios.post("/api/shops/create", form);
+        await axios.post(`${backendUrl}/api/shops/create`, form);
         toast.success("Shop created successfully");
       }
       setForm({ name: "", location: "" });

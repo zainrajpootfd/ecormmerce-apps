@@ -262,6 +262,7 @@ const Add = ({ token }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
+  // const [shop, setShop] = useState("Capital");
   const [category, setCategory] = useState("Men");
   const [subCategory, setSubCategory] = useState("Topwear");
   const [sizes, setSizes] = useState([]);
@@ -281,6 +282,7 @@ const Add = ({ token }) => {
     formData.append("name", name);
     formData.append("description", description);
     formData.append("price", price);
+    // formData.append("shop", shop);
     formData.append("category", category);
     formData.append("subCategory", subCategory);
     formData.append("sizes", JSON.stringify(sizes));
@@ -302,6 +304,7 @@ const Add = ({ token }) => {
         setName("");
         setDescription("");
         setPrice("");
+        // setShop("Capital");
         setCategory("Men");
         setSubCategory("Topwear");
         setSizes([]);
@@ -389,6 +392,17 @@ const Add = ({ token }) => {
               <option value="Kids">Kids</option>
             </select>
           </div>
+          {/* <div>
+            <p className="mb-2">Shop Location</p>
+            <select
+              onChange={(e) => setShop(e.target.value)}
+              className="w-full px-2 py-1 cursor-pointer"
+            >
+              <option value="Capital">Capital</option>
+              <option value="Mid">Mid</option>
+              <option value="Side">Side</option>
+            </select>
+          </div> */}
 
           <div>
             <p className="mb-2">Product Subcategory</p>

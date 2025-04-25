@@ -38,8 +38,26 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
         <img className="w-6" src={assets.add_icon} alt="Orders" />
         <p className="text-gray-700">Orders</p>
       </NavLink>
+
+      <NavLink
+        to="/Shop"
+        className="flex items-center gap-3 p-3 bg-white rounded-md shadow-sm hover:bg-gray-200 transition"
+      >
+        <p className="text-gray-700">
+          {" "}
+          🛒 <span className="ml-3">Shop</span>
+        </p>
+      </NavLink>
+      <NavLink
+        to="/Inventory"
+        className="flex items-center gap-3 p-3 bg-white rounded-md shadow-sm hover:bg-gray-200 transition"
+      >
+        <p className="text-gray-700">
+          {" "}
+          📦 <span className="ml-3">Inventory</span>
+        </p>
+      </NavLink>
     </div>
   );
 };
-
 export default Sidebar;

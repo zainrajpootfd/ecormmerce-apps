@@ -80,7 +80,7 @@ const removeProduct = async (req, res) => {
 // Function to update a product
 const updateProduct = async (req, res) => {
   try {
-    const { _id, name, category, price } = req.body;
+    const { _id, name, category, price, shop } = req.body;
 
     if (!_id) {
       return res

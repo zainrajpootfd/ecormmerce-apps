@@ -180,6 +180,14 @@ const List = ({ token }) => {
               onChange={handleEditChange}
               placeholder="Price"
             />
+            {/* <input
+              className="border p-2 mb-2 w-full"
+              name="shop"
+              value={editData.shop}
+              onChange={handleEditChange}
+              placeholder="Shop"
+            /> */}
+
             <div className="flex justify-end gap-2">
               <button
                 className="bg-gray-300 px-4 py-1 rounded"
@@ -200,9 +208,10 @@ const List = ({ token }) => {
 
       {/* List Table */}
       <div className="flex flex-col gap-2">
-        <div className="grid grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr] sm:grid-cols-[1fr_3fr_1fr_1fr_1fr_1fr] gap-1 border px-2 py-2 rounded shadow-lg">
+        <div className="grid grid-cols-7 sm:grid-cols-7 gap-1 border px-2 py-2 rounded shadow-lg font-bold">
           <b>Image</b>
           <b>Name</b>
+          {/* <b>Shop</b> */}
           <b>Category</b>
           <b>Price</b>
           <b>Delete</b>
@@ -213,10 +222,11 @@ const List = ({ token }) => {
           {list.map((item, index) => (
             <div
               key={index}
-              className="grid grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr] sm:grid-cols-[1fr_3fr_1fr_1fr_1fr_1fr] gap-1 border px-2 py-1 rounded shadow-lg items-center"
+              className="grid grid-cols-7 sm:grid-cols-7 gap-1 border px-2 py-1 rounded shadow-lg items-center"
             >
               <img className="w-16" src={item.image[0]} alt="Image" />
               <p>{item.name}</p>
+              {/* <p>{item.shop}</p> */}
               <p>{item.category}</p>
               <p>{item.price}</p>
               <p
