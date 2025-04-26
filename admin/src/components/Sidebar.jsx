@@ -66,6 +66,15 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
           📦 <span className="ml-3">StockTranfer</span>
         </p>
       </NavLink>
+      <NavLink
+        to="/InventoryReports"
+        className="flex items-center gap-3 p-3 bg-white rounded-md shadow-sm hover:bg-gray-200 transition"
+      >
+        <p className="text-gray-700">
+          {" "}
+          📦 <span className="ml-3">Inventory Report</span>
+        </p>
+      </NavLink>
     </div>
   );
 };

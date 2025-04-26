@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import ShopManager from "./pages/ShopManager";
 import InventoryPage from "./pages/InventoryPage";
 import TransfersPage from "./pages/TransferPage";
+import InventoryReport from "./components/InventoryReports";
 export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const App = () => {
@@ -51,6 +52,7 @@ const App = () => {
                   element={<InventoryPage token={token} />}
                 />
                 <Route path="stockTransfer" element={<TransfersPage />} />
+                <Route path="inventoryReports" element={<InventoryReport />} />
               </Routes>
             </div>
           </div>
